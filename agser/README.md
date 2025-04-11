@@ -6,13 +6,20 @@ AGSER는 입력 쿼리 내 토큰의 중요도를 바탕으로 쿼리를 분리�
 
 
 ## 주요 구성
-- `AGSERConfig`: 하이퍼파라미터 설정을 위한 dataclass
-- `AGSER`: 주요 실행 로직을 포함하는 클래스
-  - 토큰 기여도 추출
-  - 쿼리 분리 (attentive / non-attentive)
-  - 응답 생성 및 유사도 비교 (Rouge-L 기반)
-  - hallucination score 계산
-- `MLXRougeScorer`: LCS(Longest Common Subsequence)를 활용한 Rouge-L 점수 계산기
+
+- **`AGSERConfig`**: 모델 하이퍼파라미터를 저장하는 데이터 클래스  
+  - `k_ratio`: 주의 집중 토큰의 비율  
+  - `lambda_balance`: hallucination score 조정을 위한 가중치  
+  - `attention_type`: attention 계산 기준 (mean, mid, first, last 등)  
+  - `max_length`, `temperature`, `top_p`: 응답 생성 제어  
+
+- **`AGSER`**: 전체 AGSER 파이프라인을 수행하는 핵심 클래스  
+  - `get_token_contributions(query)`: 쿼리에 대한 각 토큰의 기여도 추출 (hidden states 기반)  
+  - `split_queries(query, scores)`: 토큰 중요도에 따라 쿼리를 집중 / 비집중 버전으로 나눔  
+  - `generate_answer(query)`: 주어진 쿼리에 대해 응답 생성 (sampling 기반)  
+  - `detect_hallucination(query)`: 원 응답, 집중/비집중 응답 간 Rouge-L 기반 비교 및 hallucination 점수 계산  
+
+- **`MLXRougeScorer`**: Rouge-L 유사도를 직접 계산하기 위한 간단한 LCS 기반 클래스
 
 
 ## 주요 파일
