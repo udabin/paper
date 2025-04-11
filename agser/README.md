@@ -2,7 +2,7 @@
 
 이 폴더는 논문 [Attention-Guided Self-Reflection for Zero-Shot Hallucination Detection in Large Language Models](https://arxiv.org/abs/2402.06679)를 참고하여 AGSER 기법을 직접 구현한 코드입니다.
 
-AGSER는 입력 쿼리 내 토큰의 중요도(attention contribution)를 바탕으로 쿼리를 분리하고, 각각의 응답을 비교함으로써 LLM의 hallucination 가능성을 판단하는 기법입니다.
+AGSER는 입력 쿼리 내 토큰의 중요도를 바탕으로 쿼리를 분리하고, 각각의 응답을 비교함으로써 LLM의 hallucination 가능성을 판단하는 기법입니다.
 
 
 ## 주요 구성
@@ -16,12 +16,12 @@ AGSER는 입력 쿼리 내 토큰의 중요도(attention contribution)를 바탕
 
 
 ## 주요 파일
-- `agser_main.py`: 전체 알고리즘 실행 예제가 포함된 메인 스크립트
+- `AGSER-gpt2.py`: 전체 알고리즘 실행 예제가 포함된 메인 스크립트
 
 
 ## 실행 예시
 ```bash
-python agser_main.py
+python AGSER-gpt2.py
 ```
 출력 예시:
 ```
@@ -51,4 +51,10 @@ Non-Attentive Answer: It was published in 1999.
 ## 💡 참고
 - 현재는 `GPT-2` 모델을 기준으로 테스트되며, 다양한 모델로 확장 가능
 - 본 구현은 논문 내용을 실습하기 위한 개인용 코드이며, 실제 논문에서 사용하는 학습 기반 탐지 모델과는 다를 수 있음
+
+
+## 원본 구현 출처
+- 이 코드는 아래 공개된 GitHub 저장소를 바탕으로 작성되었으며 일부 구조 개선 및 모델이 추가되었습니다.
+- 원본 구현: https://github.com/sanowl/AGSER
+- 코드의 저작권은 원 저자에게 있으며, 본 저장소는 비상업적 학습 및 연구 목적으로 작성되었습니다.
 
