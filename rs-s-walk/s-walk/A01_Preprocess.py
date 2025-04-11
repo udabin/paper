@@ -5,7 +5,6 @@ import pandas as pd
 drive.mount('/content/gdrive/')
 path = './gdrive/MyDrive/ml-32m/'
 
-
 def preprocess(path, )
 
     movies_data = pd.read_csv(path + 'movies.csv')
