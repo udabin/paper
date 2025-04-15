@@ -8,18 +8,18 @@
 ### 1. S-Walk: Accurate and Scalable Session-based Recommendation with Random Walks
 - 추천 시스템 / 세션 기반 추천
 - Random Walk 기반 세션 그래프 확산 방식 구현
-- 논문 링크: [https://arxiv.org/abs/2108.05515](https://arxiv.org/abs/2108.05515)
+- 논문 링크: [https://arxiv.org/abs/2201.01091](https://arxiv.org/abs/2201.01091)
 
 ### 2. How to Steer LLM Latents for Hallucination Detection?
 - LLM 기반 Hallucination Detection
 - Truthfulness Separator Vector (TSV) 개념 구현
 - 주요 구성: TSV 레이어, TruthfulQA 실험, AUROC 평가
-- 논문 링크: [https://arxiv.org/abs/2310.03684](https://arxiv.org/abs/2310.03684)
+- 논문 링크: [https://www.arxiv.org/abs/2503.01917](https://www.arxiv.org/abs/2503.01917)
 
 ### 3. Attention-Guided Self-Reflection for Zero-Shot Hallucination Detection
 - Zero-shot 환경에서의 hallucination 탐지
 - Attention 기반 Self-Reflection 구조 구현
-- 논문 링크: [https://arxiv.org/abs/2402.06679](https://arxiv.org/abs/2402.06679)
+- 논문 링크: [https://arxiv.org/abs/2501.09997](https://arxiv.org/abs/2501.09997)
 
 
 ## 폴더 구조
